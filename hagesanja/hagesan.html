@@ -1,0 +1,412 @@
+
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>HageSan @hagesanja</title>
+
+<meta name="description" content="HageSan | HageStyling hortensia. 
+Følg Hagesan videre til YouTube, Facebook, TikTok og Snapchat.">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  /*this portfolio is built by a student dont
+  bully me for not following all the coding practises*/
+
+  /* The background of the site.. general colours text colors */
+  :root{
+    --paper:#f3ece0;
+    --paper-deep:#e9dcc8;
+    --paper-warm:#f8f2e8;
+    --hydrangea:#c9869f;
+    --hydrangea-mid:#d59fb4;
+    --hydrangea-soft:#ecc9d8;
+    --lilac:#b892b6;
+    --sage:#7f9575;
+    --sage-deep:#4e6247;
+    --ink:#443420;
+    --ink-soft:#847a6d;
+    --gilt:#b3902f;
+    --gilt-soft:#ede0bd;
+    --rule:rgba(62,58,53,.14);
+  }
+
+  /* light effekt in the background for more depth*/
+  *{box-sizing:border-box}
+  html,body{margin:0}
+
+  body{
+    font-family:"Mulish",system-ui,sans-serif;
+    color:var(--ink);
+    background:
+      /* edit for colors*/
+      radial-gradient(130% 70% at 50% 0%, #2f5a40 0%, transparent 52%),
+      radial-gradient(120% 80% at 50% 108%, #e7d8c2 0%, transparent 55%),
+      #efe4d3;
+
+    min-height:100dvh;
+    display:flex; justify-content:center;
+    padding:40px 18px 46px;
+
+    -webkit-font-smoothing:antialiased;
+
+  }
+
+    /* broder lights behind the plate */
+  .plate{
+    width:100%; max-width:412px;
+    background:
+      radial-gradient(120% 60% at 50% 0%, var(--paper-warm), var(--paper) 60%);
+
+    border-radius:16px;
+    padding:30px 26px 28px;
+    position:relative;
+
+    /* edit for colors*/
+
+    box-shadow:0 20px 50px -18px rgba(78,62,50,.4), 0 2px 0 rgba(255,255,255,.5) inset;
+    animation:rise .8s ease both;
+  }
+
+
+
+  /* edges for more fine look*/
+
+  /* edge out */
+  .plate::before{
+    content:""; position:absolute; inset:11px;
+    /* edit for colors*/
+    border:1px solid rgba(179,144,47,.45);
+    border-radius:10px; pointer-events:none;
+  }
+
+/* edge in */
+  .plate::after{
+
+    content:""; position:absolute; inset:15px;
+    /* edit for colors*/
+    border:.5px solid rgba(235, 176, 13, 0.28);
+
+    border-radius:7px; pointer-events:none;
+  }
+
+  /* the swoosh :3 */
+  @keyframes rise{ from{opacity:0; transform:translateY(14px)} 
+  to{opacity:1; transform:none} 
+  }
+
+  .inner{ position:relative; z-index:1; padding:6px 4px 0; text-align:center; 
+  }
+
+  /* sanjas portrait and the flowers */
+  .crown{ position:relative; display:flex; align-items:center; justify-content:center; margin:4px auto 6px; }
+  .portrait{ position:relative; z-index:2; width:134px; height:134px; border-radius:50%; }
+  .portrait img{ width:100%; height:100%; border-radius:50%; object-fit:cover; display:block; }
+  .portrait::after{
+    content:""; position:absolute; inset:0; border-radius:50%; pointer-events:none;
+    box-shadow:0 0 0 4px var(--paper-warm), 0 0 0 5px var(--gilt),
+               0 0 0 9px rgba(179,144,47,.22), 0 12px 24px -8px rgba(78,62,50,.45);
+  }
+
+ /* the flower model*/
+  .side-flower{ width:106px; height:106px; z-index:1; flex:none; }
+  .side-flower.left{ margin-right:-32px; transform:translateY(8px) rotate(-7deg); }
+  .side-flower.right{ margin-left:-32px; transform:translateY(8px) rotate(7deg); }
+
+
+
+/* blooming oon the sides effects */
+  .bloom{ width:172px; height:172px; margin:2px auto 4px; display:block; 
+  }
+
+  .petals{ transform-box:fill-box; transform-origin:center; 
+    transform:scale(0); opacity:0;
+    animation:pop 2s cubic-bezier(.30,1.9,.5,1) both; 
+  }
+
+
+  .leaf-g{ transform-box:fill-box; transform-origin:50% 100%; transform:scale(0);
+           animation:pop .80s cubic-bezier(.3,1.3,.5,1) both; }
+
+  
+  @keyframes pop{ 0%{transform:scale(.50);opacity:0} 70%{transform:scale(1)} 
+  100%{transform:scale(1);opacity:1} 
+
+  }
+
+  @media (max-width:360px){
+    .portrait{ width:118px; height:118px }
+    .side-flower{ width:92px; height:92px }
+    .side-flower.left{ margin-right:-28px } .side-flower.right{ margin-left:-28px }
+  }
+
+
+  /* fonts for the texts */
+  .title{
+    font-family:"Cormorant Garamond",serif; font-weight:600;
+    font-size:42px; line-height:1; letter-spacing:.01em;
+    color:var(--ink); margin:6px 0 0;
+  }
+  .tag{
+    font-size:10.5px; letter-spacing:.4em; text-transform:uppercase;
+    color:var(--sage-deep); font-weight:600; margin:7px 0 0; padding-left:.4em;
+  }
+  .handle{ font-size:13px; color:var(--ink-soft); font-weight:500; margin:11px 0 0; }
+  .handle::before{ content:"@" }
+
+  .bio{
+    font-family:"Cormorant Garamond",serif; font-style:italic; font-weight:500;
+    font-size:20px; line-height:1.4; color:var(--ink);
+    margin:15px auto 3px; max-width:26ch;
+  }
+  .bio-sub{
+    font-size:11px; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--ink-soft); font-weight:600; margin:9px 0 0;
+  }
+
+  .Follow{
+    display:flex; align-items:center; gap:12px;
+    margin:24px 2px 4px;
+    font-size:10.5px; letter-spacing:.3em; text-transform:uppercase;
+    color:var(--sage-deep); font-weight:700; white-space:nowrap;
+  }
+
+  .Follow::before,.Follow::after{ content:""; height:1px; flex:1; background:var(--rule); 
+}
+
+
+  .list{ list-style:none; margin:0; padding:0; 
+  }
+
+  .row{ border-top:1px solid var(--rule); 
+  }
+
+  .row:last-child{ border-bottom:1px solid var(--rule); 
+  }
+
+  .lnk{
+    display:flex; align-items:center; gap:14px;
+    padding:15px 8px; text-decoration:none; color:var(--ink);
+    border-radius:9px; transition:background .18s ease, transform .18s ease;
+  }
+
+  .lnk:hover,.lnk:focus-visible{ background:var(--paper-deep); outline:none; 
+  }
+
+  .lnk:focus-visible{ box-shadow:0 0 0 2px var(--gilt); 
+  }
+
+
+  /* design of the small circle with tags in them */
+  .Logo{
+    width:38px; height:38px; flex:none; border-radius:50%;
+    display:grid; place-items:center;
+    background:var(--paper-warm);
+    box-shadow:0 0 0 1px rgba(179,144,47,.4);
+    color:var(--sage-deep);
+  }
+
+  .med svg{ width:19px; height:19px; display:block; 
+  }
+
+  .txt{ flex:1; text-align:left; min-width:0; 
+  }
+
+  .med-name{
+    font-family:"Cormorant Garamond",serif; font-weight:600;
+    font-size:20px; line-height:1.1; color:var(--ink);
+  }
+
+  .med-sub{ font-size:11.5px; color:var(--ink-soft); font-weight:500; margin-top:1px; 
+  }
+
+  .ny{
+    font-size:9px; letter-spacing:.14em; font-weight:700; text-transform:uppercase;
+    color:#8a6d18; background:var(--gilt-soft);
+    padding:3px 8px; border-radius:20px; flex:none;
+    box-shadow:0 0 0 .5px rgba(179,144,47,.4);
+  }
+  .go{ color:var(--ink-soft); font-family:"Cormorant Garamond",serif; font-size:22px;
+       flex:none; transition:transform .18s ease,color .18s ease; 
+      }
+
+  .lnk:hover .go,.lnk:focus-visible .go{ transform:translateX(3px); color:var(--hydrangea); 
+  }
+
+  .collab .med{ color:var(--hydrangea); 
+  }
+  .collab .med-name{ color:var(--sage-deep); 
+  }
+
+
+
+
+  .smltree{
+    text-align:center; margin:22px 0 2px;
+    font-family:"Cormorant Garamond",serif; font-style:italic;
+    font-size:16px; color:var(--sage-deep);
+  }
+  
+  .smltree .sprig{ display:block; width:34px; height:12px; margin:0 auto 6px; color:var(--sage); }
+
+  @media (max-width:360px){ .title{font-size:36px} .bio{font-size:18px} .med-name{font-size:18px} }
+
+  @media (prefers-reduced-motion:reduce){
+    .plate{ animation:none }
+    .petals,.leaf-g{ animation:none; transform:scale(1); opacity:1 }
+  }
+
+
+
+</style>
+</head>
+<body>
+  <main class="plate">
+    <div class="inner">
+
+      <div class="crown">
+        <svg class="side-flower left" viewBox="0 0 120 120" aria-hidden="true"><g id="folL"></g><g id="clusterL"></g></svg>
+        <div class="portrait"><img src="images/IMG_5541.jpg" alt="title"></div>
+        <svg class="side-flower right" viewBox="0 0 120 120" aria-hidden="true"><g id="folR"></g><g id="clusterR"></g></svg>
+      </div>
+
+
+      <h1 class="title">HageSan</h1>
+      <p class="tag">Hagestyling</p>
+      <p class="handle">hagesanja</p>
+
+      <p class="bio">Hortensia elsker &amp; planteentusiast</p>
+      <p class="bio-sub">Formering · FØR &amp; ETTER</p>
+
+      <p class="Follow">Følg meg her</p>
+
+      <ul class="list">
+
+        <li class="row">
+          <a class="lnk" href="https://www.instagram.com/hagesanja" target="_blank" rel="noopener">
+            <span class="med" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".9" fill="currentColor" stroke="none"/></svg></span>
+            <span class="txt"><span class="med-name">Instagram</span><span class="med-sub">  Hovedplattform, der eventyret startet</span></span>
+            <span class="go" aria-hidden="true">→</span>
+          </a>
+        </li>
+
+        <!-- TODO: lim inn YouTube-URL når kanalen er opprettet -->
+        <li class="row">
+          <a class="lnk" href="#" target="_blank" rel="noopener">
+            <span class="med" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10 9.2l5 2.8-5 2.8z" fill="currentColor" stroke="none"/></svg></span>
+            <span class="txt"><span class="med-name">YouTube</span><span class="med-sub">  Lengre videoer &amp; guider</span></span>
+            <span class="ny">Ny</span>
+          </a>
+        </li>
+
+        <!-- TODO: lim inn Facebook-URL når siden er opprettet -->
+        <li class="row">
+          <a class="lnk" href="#" target="_blank" rel="noopener">
+            <span class="med" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.8 21v-7.6h2.4l.4-2.9h-2.8V8.7c0-.8.3-1.4 1.5-1.4h1.4V4.7c-.4-.05-1.3-.15-2.3-.15-2.3 0-3.7 1.4-3.7 3.9v2.15H8.3v2.9h2.6V21z"/></svg></span>
+            <span class="txt"><span class="med-name">Facebook</span><span class="med-sub">  Gruppe &amp; oppdateringer</span></span>
+          </a>
+        </li>
+
+        <!-- TODO: lim inn TikTok-URL når kontoen er opprettet -->
+        <li class="row">
+          <a class="lnk" href="#" target="_blank" rel="noopener">
+            <span class="med" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 3c.3 2 1.5 3.5 3.4 3.9v2.4c-1.3.05-2.5-.3-3.6-1v6a5.5 5.5 0 1 1-5.5-5.5c.3 0 .5 0 .8.06v2.5a3 3 0 1 0 2.1 2.86V3h2.8z"/></svg></span>
+            <span class="txt"><span class="med-name">TikTok</span><span class="med-sub">  Korte klipp fra hagen</span></span>
+            <span class="ny">Ny</span>
+          </a>
+        </li>
+
+        <!-- TODO: lim inn Snapchat-brukernavn: snapchat.com/add/BRUKERNAVN -->
+        <li class="row">
+          <a class="lnk" href="#" target="_blank" rel="noopener">
+            <span class="med" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3.4c2.6 0 3.9 1.9 3.9 4.2 0 .7-.1 1.4-.1 1.9.6.3 1.3-.1 1.8.1.5.5-.5 1-1.2 1.4-.4.2-.7.3-.6.7.4 1.2 1.7 2.3 2.9 2.6.4.1.5.4.2.7-.5.5-1.6.5-1.9 1-.2.4.1 1-.5 1-.6 0-1.2-.4-2-.2-.9.2-1.4 1.3-3 1.8-.5.15-1 .15-1.5 0-1.6-.5-2.1-1.6-3-1.8-.8-.2-1.4.2-2 .2-.6 0-.3-.6-.5-1-.3-.5-1.4-.5-1.9-1-.3-.3-.2-.6.2-.7 1.2-.3 2.5-1.4 2.9-2.6.1-.4-.2-.5-.6-.7-.7-.4-1.7-.9-1.2-1.4.5-.2 1.2.2 1.8-.1 0-.5-.1-1.2-.1-1.9C8.1 5.3 9.4 3.4 12 3.4z"/></svg></span>
+            <span class="txt"><span class="med-name">Snapchat</span><span class="med-sub">  Bak kulissene</span></span>
+          </a>
+        </li>
+
+        <!-- TODO: bytt inn hennes Gmail-adresse -->
+        <li class="row collab">
+          <a class="lnk" href="mailto:sanja.andonovic@gmail.com?subject=Samarbeid">
+            <span class="med" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M4 7l8 5.5L20 7"/></svg></span>
+            <span class="txt"><span class="med-name"> For Samarbeid</span><span class="med-sub"> Ta kontakt på e-post</span></span>
+            <span class="go" aria-hidden="true">→</span>
+          </a>
+        </li>
+
+      </ul>
+
+      <p class="smltree">
+        <svg class="sprig" viewBox="0 0 40 14" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true">
+          <path d="M20 13V3M20 8c3-.5 5-2 6-4M20 8c-3-.5-5-2-6-4M20 5c2-.4 3.4-1.4 4.2-2.8M20 5c-2-.4-3.4-1.4-4.2-2.8"/>
+        </svg>
+        Fra stikling til full blomst..
+      </p>
+
+    </div>
+  </main>
+
+
+<script>
+(function(){
+  // bloom animation
+
+  var svgns="http://www.w3.org/2000/svg";
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var pal=["var(--hydrangea)","var(--hydrangea)","var(--hydrangea-mid)","var(--hydrangea-mid)","var(--hydrangea-soft)","var(--lilac)"];
+
+
+  function leaf(folId, defs){
+    var fol=document.getElementById(folId);
+    defs.forEach(function(L,i){
+      var g=document.createElementNS(svgns,"g");
+      g.setAttribute("class","leaf-g");
+      g.style.animationDelay=(reduce?0:0.08+i*0.06)+"s";
+      var p=document.createElementNS(svgns,"path");
+      p.setAttribute("d","M0 0 C -8 -4 -13 -12 -11 -20 C -3 -18 3 -10 1 -1 Z");
+      p.setAttribute("transform","translate("+L[0]+","+L[1]+") rotate("+L[2]+")");
+      p.setAttribute("fill","var(--sage)"); p.setAttribute("opacity",".9");
+      g.appendChild(p); fol.appendChild(g);
+    });
+  }
+
+
+  function bloom(clusterId, N, cx, cy, maxR, base){
+    var cl=document.getElementById(clusterId), golden=2.399963;
+    for(var i=0;i<N;i++){
+      var t=i/N, r=maxR*Math.sqrt(t)*(0.9+0.1*Math.random()), a=i*golden;
+      var x=cx+r*Math.cos(a), y=cy+r*Math.sin(a)*0.92, scale=1-0.26*t;
+      var col=pal[Math.floor(Math.random()*pal.length)];
+      var pos=document.createElementNS(svgns,"g");
+      pos.setAttribute("transform","translate("+x.toFixed(1)+","+y.toFixed(1)+") scale("+scale.toFixed(2)+")");
+      var pet=document.createElementNS(svgns,"g");
+      pet.setAttribute("class","petals");
+      pet.style.animationDelay=(reduce?0:base+i*0.04)+"s";
+      for(var p=0;p<4;p++){
+        var e=document.createElementNS(svgns,"ellipse");
+        e.setAttribute("cx","0"); e.setAttribute("cy","-5"); e.setAttribute("rx","3.7"); e.setAttribute("ry","5.6");
+        e.setAttribute("transform","rotate("+(p*90)+")"); e.setAttribute("fill",col);
+        pet.appendChild(e);
+      }
+      var c=document.createElementNS(svgns,"circle");
+      c.setAttribute("r","1.7"); c.setAttribute("fill","#f4ead0"); pet.appendChild(c);
+      pos.appendChild(pet); cl.appendChild(pos);
+    }
+  }
+
+  // left flower blooms toward lower left and right flower mirror
+  leaf("folL", [[58,86,-24],[74,90,10]]);
+  leaf("folR", [[62,86,24],[46,90,-10]]);
+  bloom("clusterL", 15, 56, 54, 34, 0.35);
+  bloom("clusterR", 15, 64, 54, 34, 0.55);
+})();
+</script>
+</body>
+</html>
